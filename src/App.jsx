@@ -97,6 +97,11 @@ function App() {
           <li>Stallings, W. (2006). Organización y arquitectura de computadores. 7ª Edición. Prentice Hall.</li>
           <li>Patterson, D. A. & Hennessy, J. L. (2011). Estructura y diseño de computadores. 4ª Edición. Editorial Reverté.</li>
         </ul>
+        <div className="footer-credits">
+          <p>Proyecto realizado por :</p>
+          <p>William Flores.</p>
+          <p>Universidad de Oriente, 2026</p>
+        </div>
       </footer>
 
       <InfoModal 

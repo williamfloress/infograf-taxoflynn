@@ -125,3 +125,13 @@ body {
   line-height: 1.8;
 }
 
+.footer-credits {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
