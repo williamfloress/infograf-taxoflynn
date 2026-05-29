@@ -1,0 +1,164 @@
+.arch-diagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 8px;
+  position: relative;
+}
+
+/* Nodes Base */
+.diagram-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.node-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+  min-height: 16px;
+}
+
+.node-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.arch-diagram:hover .node-icon {
+  transform: scale(1.05);
+}
+
+/* UC Icon (Blue chip) */
+.uc-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #1b4982, #296bb8);
+  border-radius: 12px;
+  border: 2px solid #113057;
+}
+
+/* UP Icon (Diamond/Green chip) */
+.up-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #288c5f, #3bc789);
+  border-radius: 12px;
+  border: 2px solid #1a5e3f;
+  margin: 8px;
+}
+
+/* Memory Icon (Stacked) */
+.memory-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #2a3d54, #3e5875);
+  border-radius: 12px;
+  border: 2px solid #111a24;
+}
+
+/* Flows */
+.flow-line {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flow-horizontal {
+  width: 55px;
+  height: 2px;
+  background-color: #cbd5e1;
+}
+
+.flow-label {
+  font-size: 0.5rem;
+  font-weight: 700;
+  position: absolute;
+  top: -18px;
+  white-space: nowrap;
+  color: var(--color-text-light);
+}
+
+.flow-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--flow-color);
+  border-radius: 50%;
+  animation: flow-horizontal 2s infinite linear;
+}
+
+/* Tablet & Desktop adjustments for flows */
+@media (min-width: 500px) {
+  .flow-horizontal {
+    width: 90px;
+  }
+  
+  .flow-label {
+    font-size: 0.7rem;
+    top: -22px;
+  }
+  .arch-diagram {
+    gap: 25px;
+  }
+}
+
+/* Complex Layouts (SIMD, MISD, MIMD) */
+.col-uc, .col-up, .col-mem, .col-flow, .col-data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.multi-nodes {
+  justify-content: space-between;
+  height: 100%;
+}
+
+.align-center {
+  align-items: center;
+  justify-content: space-around;
+}
+
+.shared-label {
+  font-size: 0.45rem;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (min-width: 500px) {
+  .shared-label {
+    font-size: 0.65rem;
+  }
+  .col-uc, .col-up, .col-mem, .col-flow, .col-data {
+    gap: 15px;
+  }
+}
+
+.data-label {
+  display: flex;
+  align-items: center;
+  height: 50px; /* match node height */
+}
+
+.center-single {
+  justify-content: center;
+}
+
+/* specific adjustments */
+.simd .col-uc, .simd .col-mem { justify-content: center; }
+.simd .col-up { gap: 10px; }
+
+.misd .col-up, .misd .col-mem { justify-content: center; }
+
+.mimd .col-mem { justify-content: center; }

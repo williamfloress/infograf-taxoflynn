@@ -1,0 +1,97 @@
+.quadrant-card {
+  background: white;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-top: 8px solid var(--card-color);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glassmorphism subtle effect */
+.quadrant-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+}
+
+.quadrant-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px -15px var(--card-color);
+}
+
+.card-header {
+  text-align: center;
+}
+
+.card-title {
+  color: var(--card-color);
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.card-subtitle {
+  color: var(--color-text-light);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card-body {
+  flex: 1;
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+}
+
+.card-footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.card-example {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-bg);
+  padding: 10px 15px;
+  border-radius: 12px;
+  align-self: center;
+}
+
+.example-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.example-icon svg {
+  width: 20px;
+  height: 20px;
+}
